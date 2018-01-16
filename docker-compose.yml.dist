@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 services:
   fpm:
@@ -37,7 +37,7 @@ services:
     environment:
       PHP_IDE_CONFIG: 'serverName=pim-ce'
     ports:
-      - '8080:80'
+      - '8081:80'
     volumes:
       - ./:/srv/pim:ro
       - ./docker/httpd.conf:/usr/local/apache2/conf/httpd.conf
@@ -45,7 +45,7 @@ services:
     networks:
       - akeneo
 
-  mysql:
+  mysql-pim:
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: root
